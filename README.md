@@ -1,194 +1,196 @@
-# Video Downloader
+# 视频下载器
 
-A powerful multi-platform video downloader supporting various video websites including Bilibili, Baidu Baike, Sohu Video, 360kan, and Pinshan.
+一个功能强大的多平台视频下载工具，支持包括哔哩哔哩、百度百科、搜狐视频、360kan和品善在内的多个视频网站。
 
-## Features
+## 功能特性
 
-- **Multi-platform Support**: Download videos from Bilibili, Baidu Baike, Sohu Video, 360kan, and Pinshan
-- **GUI Interface**: User-friendly graphical interface built with tkinter
-- **CLI Support**: Command-line interface for automated downloads
-- **Auto-parsing**: Intelligent video URL parsing and extraction
-- **Resume Downloads**: Support for resuming interrupted downloads
-- **Progress Display**: Real-time download progress with detailed logging
-- **Error Handling**: Robust error handling with retry mechanisms
-- **Format Selection**: Automatic best quality selection with fallback options
-- **Audio/Video Merging**: Automatic merging of separate audio and video streams
+- **多平台支持**：支持从哔哩哔哩、百度百科、搜狐视频、360kan和品善等等下载视频
+- **图形界面**：基于tkinter构建的用户友好图形界面
+- **命令行支持**：支持命令行界面进行自动化下载
+- **智能解析**：智能视频URL解析和提取
+- **断点续传**：支持恢复中断的下载
+- **进度显示**：实时下载进度显示和详细日志记录
+- **错误处理**：强大的错误处理和重试机制
+- **格式选择**：自动选择最佳质量，支持备选选项
+- **音视频合并**：自动合并分离的音频和视频流
 
-## System Requirements
+## 系统要求
 
-- Python 3.7 or higher
-- Windows, macOS, or Linux
-- FFmpeg (included in the project)
-- Chrome browser (for Selenium-based extraction)
+- Python 3.7 或更高版本
+- Windows、macOS 或 Linux
+- FFmpeg（项目中已包含）
+- Chrome 浏览器（用于基于Selenium的提取）
 
-## Installation
+## 安装说明
 
-1. **Clone the repository**:
+1. **克隆仓库**：
    ```bash
    git clone https://github.com/WernerHeisenberg1/video-downloader.git
    cd video-downloader
    ```
 
-2. **Install dependencies**:
+2. **安装依赖**：
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Run the application**:
+3. **运行应用程序**：
    
-   **GUI Version**:
+   **图形界面版本**：
    ```bash
    python src/video_downloader_gui.py
    ```
    
-   **CLI Version**:
+   **命令行版本**：
    ```bash
-   python src/video_downloader.py <video_url>
+   python src/video_downloader.py <视频URL>
    ```
 
-## Screenshots
+## 程序截图
 
-### GUI Interface
+### 图形界面展示
 
-![GUI Startup Interface](docs/images/gui-startup-interface.png)
-*Main application interface with URL input and download options*
+![GUI启动界面](docs/images/gui-startup-interface.png)
+*主应用程序界面，包含URL输入和下载选项*
 
-![Download Progress Interface](docs/images/download-progress-interface.png)
-*Download progress display with real-time status updates*
+![下载进度界面](docs/images/download-progress-interface.png)
+*下载进度显示，包含实时状态更新*
 
-## Usage
+## 使用方法
 
-### GUI Interface
+### 图形界面
 
-1. Launch the GUI application
-2. Paste or enter the video URL in the input field
-3. Select the download directory
-4. Click "Download" to start the process
-5. Monitor progress in the log area
+1. 启动GUI应用程序
+2. 在输入框中粘贴或输入视频URL
+3. 选择下载目录
+4. 点击"下载"开始下载过程
+5. 在日志区域监控进度
 
-### Command Line Interface
+### 命令行界面
 
 ```bash
-# Download a single video
+# 下载单个视频
 python src/video_downloader.py "https://www.bilibili.com/video/BV1234567890"
 
-# Specify custom download directory
+# 指定自定义下载目录
 python src/video_downloader.py "https://www.bilibili.com/video/BV1234567890" --output ./downloads
 ```
 
-### Supported Websites
+### 支持的网站
 
-| Website | Status | Notes |
-|---------|--------|---------|
-| Bilibili | ✅ Supported | Full support with audio/video merging |
-| Baidu Baike | ✅ Supported | Video extraction from encyclopedia pages |
-| Sohu Video | ✅ Supported | Standard video downloads |
-| 360kan | ⚠️ Limited | Requires Selenium for some videos |
-| Pinshan | ✅ Supported | Educational content platform |
-| YouTube | ✅ Supported | Via yt-dlp integration |
+| 网站 | 状态 | 备注 |
+|------|------|------|
+| 哔哩哔哩 | ✅ 支持 | 完全支持音视频合并 |
+| 百度百科 | ✅ 支持 | 从百科页面提取视频 |
+| 搜狐视频 | ✅ 支持 | 标准视频下载 |
+| 360kan | ⚠️ 有限支持 | 某些视频需要Selenium |
+| 品善 | ✅ 支持 | 教育内容平台 |
+| YouTube | ✅ 支持 | 通过yt-dlp集成 |
 
-## Project Structure
+## 项目结构
 
 ```
 video-downloader/
-├── src/                    # Source code
-│   ├── __init__.py        # Package initialization
-│   ├── video_downloader.py # Core downloader logic
-│   ├── video_downloader_gui.py # GUI interface
-│   ├── config.py          # Configuration settings
-│   ├── main_downloader.py # Main entry point
-│   └── optimized_video_downloader.py # Optimized version
-├── docs/                   # Documentation
-├── tests/                  # Test files
-├── examples/              # Usage examples
-├── scripts/               # Utility scripts
-├── ffmpeg/                # FFmpeg binaries
-├── requirements.txt       # Python dependencies
-├── setup.py              # Package setup
-├── LICENSE               # License file
-└── README.md             # This file
+├── src/                    # 源代码
+│   ├── __init__.py        # 包初始化
+│   ├── video_downloader.py # 核心下载逻辑
+│   ├── video_downloader_gui.py # GUI界面
+│   ├── config.py          # 配置设置
+│   ├── main_downloader.py # 主入口点
+│   └── optimized_video_downloader.py # 优化版本
+├── docs/                   # 文档
+│   └── images/            # 项目截图
+├── tests/                  # 测试文件
+├── examples/              # 使用示例
+├── scripts/               # 实用脚本
+├── ffmpeg/                # FFmpeg二进制文件
+├── requirements.txt       # Python依赖
+├── setup.py              # 包设置
+├── LICENSE               # 许可证文件
+├── README.md             # 英文说明文件
+└── README_CN.md          # 中文说明文件（本文件）
 ```
 
-## Configuration
+## 配置说明
 
-The application uses a centralized configuration system in `src/config.py`. You can customize:
+应用程序在`src/config.py`中使用集中配置系统。您可以自定义：
 
-- Download directories
-- Quality preferences
-- Retry settings
-- Timeout values
-- User agents
-- Site-specific settings
+- 下载目录
+- 质量偏好
+- 重试设置
+- 超时值
+- 用户代理
+- 站点特定设置
 
-## Dependencies
+## 依赖项
 
-### Core Dependencies
-- `yt-dlp`: Video extraction and downloading
-- `requests`: HTTP requests
-- `beautifulsoup4`: HTML parsing
-- `selenium`: Web automation for complex sites
-- `tqdm`: Progress bars
+### 核心依赖
+- `yt-dlp`：视频提取和下载
+- `requests`：HTTP请求
+- `beautifulsoup4`：HTML解析
+- `selenium`：复杂网站的Web自动化
+- `tqdm`：进度条
 
-### GUI Dependencies
-- `tkinter`: GUI framework (included with Python)
+### GUI依赖
+- `tkinter`：GUI框架（Python自带）
 
-### Optional Dependencies
-- `webdriver-manager`: Automatic Chrome driver management
-- `cx-Freeze`: For building executables
+### 可选依赖
+- `webdriver-manager`：自动Chrome驱动管理
+- `cx-Freeze`：用于构建可执行文件
 
-## Building Executables
+## 构建可执行文件
 
-To create standalone executables:
+创建独立可执行文件：
 
 ```bash
 python setup.py build
 ```
 
-This will create executables in the `build/` directory.
+这将在`build/`目录中创建可执行文件。
 
-## Troubleshooting
+## 故障排除
 
-### Common Issues
+### 常见问题
 
-1. **FFmpeg not found**: Ensure FFmpeg is in your PATH or use the included binaries
-2. **Chrome driver issues**: Update Chrome browser or use webdriver-manager
-3. **Network timeouts**: Check your internet connection and firewall settings
-4. **Permission errors**: Run with appropriate permissions for the download directory
+1. **找不到FFmpeg**：确保FFmpeg在您的PATH中或使用包含的二进制文件
+2. **Chrome驱动问题**：更新Chrome浏览器或使用webdriver-manager
+3. **网络超时**：检查您的网络连接和防火墙设置
+4. **权限错误**：为下载目录运行适当的权限
 
-### Logging
+### 日志记录
 
-Detailed logs are saved to `downloads/downloader.log`. Check this file for debugging information.
+详细日志保存到`downloads/downloader.log`。检查此文件以获取调试信息。
 
-## Contributing
+## 贡献
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. Fork 仓库
+2. 创建功能分支 (`git checkout -b feature/amazing-feature`)
+3. 提交更改 (`git commit -m 'Add amazing feature'`)
+4. 推送到分支 (`git push origin feature/amazing-feature`)
+5. 打开Pull Request
 
-## License
+## 许可证
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+本项目采用MIT许可证 - 详见[LICENSE](LICENSE)文件。
 
-## Disclaimer
+## 免责声明
 
-This tool is for educational and personal use only. Please respect the terms of service of the websites you download from and ensure you have the right to download the content.
+此工具仅供教育和个人使用。请尊重您下载网站的服务条款，并确保您有权下载内容。
 
-## Acknowledgments
+## 致谢
 
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp) for the excellent video extraction library
-- [FFmpeg](https://ffmpeg.org/) for video processing capabilities
-- All contributors who have helped improve this project
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) 提供优秀的视频提取库
+- [FFmpeg](https://ffmpeg.org/) 提供视频处理功能
+- 所有帮助改进此项目的贡献者
 
-## Support
+## 支持
 
-If you encounter any issues or have questions, please:
+如果您遇到任何问题或有疑问，请：
 
-1. Check the [troubleshooting section](#troubleshooting)
-2. Search existing [issues](https://github.com/WernerHeisenberg1/video-downloader/issues)
-3. Create a new issue with detailed information
+1. 查看[故障排除部分](#故障排除)
+2. 搜索现有[issues](https://github.com/WernerHeisenberg1/video-downloader/issues)
+3. 创建包含详细信息的新issue
 
 ---
 
-**Star this repository if you find it helpful!** ⭐
+**如果您觉得这个仓库有帮助，请给它一个星标！** ⭐
