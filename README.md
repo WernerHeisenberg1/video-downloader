@@ -25,7 +25,7 @@ A powerful multi-platform video downloader supporting various video websites inc
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/video-downloader.git
+   git clone https://github.com/WernerHeisenberg1/video-downloader.git
    cd video-downloader
    ```
 
@@ -186,7 +186,7 @@ This tool is for educational and personal use only. Please respect the terms of 
 If you encounter any issues or have questions, please:
 
 1. Check the [troubleshooting section](#troubleshooting)
-2. Search existing [issues](https://github.com/your-username/video-downloader/issues)
+2. Search existing [issues](https://github.com/WernerHeisenberg1/video-downloader/issues)
 3. Create a new issue with detailed information
 
 ---
